@@ -7395,7 +7395,7 @@ var DateRangePicker = defineClass(
      */
     destroy: function() {
       this.off();
-     try {
+
        if (this._startpicker) {
          this._startpicker.destroy();
        }
@@ -7403,7 +7403,7 @@ var DateRangePicker = defineClass(
          this._endpicker.destroy();
        }
        this._startpicker = this._endpicker = null;
-     } catch (e){}
+
     }
   }
 );
