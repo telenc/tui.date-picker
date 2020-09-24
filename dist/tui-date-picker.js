@@ -7395,9 +7395,15 @@ var DateRangePicker = defineClass(
      */
     destroy: function() {
       this.off();
-      this._startpicker.destroy();
-      this._endpicker.destroy();
-      this._startpicker = this._endpicker = null;
+     try {
+       if (this._startpicker) {
+         this._startpicker.destroy();
+       }
+       if (this._endpicker) {
+         this._endpicker.destroy();
+       }
+       this._startpicker = this._endpicker = null;
+     } catch (e){}
     }
   }
 );
